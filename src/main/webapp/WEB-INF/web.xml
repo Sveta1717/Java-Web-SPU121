@@ -5,21 +5,19 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <filter>
-    <filter-name>CharsetFilter</filter-name>
-    <filter-class>step.learning.Filters.CharsetFilter</filter-class>
+    <filter-name>GuiceFilter</filter-name>
+    <filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
   </filter>
+
+  
   <filter-mapping>
-    <filter-name>CharsetFilter</filter-name>
+    <filter-name>GuiceFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
-  <filter>
-    <filter-name>BrowserFilter</filter-name>
-    <filter-class>step.learning.Filters.BrowserFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>BrowserFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
+  
+  <listener>
+    <listener-class>step.learning.ioc.ListenConfig</listener-class>
+  </listener>
 
 </web-app>
